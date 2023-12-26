@@ -77,28 +77,40 @@
 //    console.log("   --------    ");
 // }
 
-let arrayNum = [3, 7, 4, 10, 2, 6];
-console.log(arrayNum.map((value, index, array) => { 
-    return value **3; 
-}));
-function discount(value){
-    // /for( let i=0, i<=arrayNum.length; i++){
-        if(value >= 5){
-            console.log(value , "eligible for 10 % discount");
-        }
-        else{
-            console.log(value, "eligible for 20% discount");
-        }
-    // /}
-}
-//let dis = 
-arrayNum.map(discount);
-// console.log(dis);
-let numbers = [3, 4, 6, 7, 8, 9, 12, 10];
+// let arrayNum = [3, 7, 4, 10, 2, 6];
+// console.log(arrayNum.map((value, index, array) => { 
+//     return value **3; 
+// }));
+// function discount(value){
+//     // /for( let i=0, i<=arrayNum.length; i++){
+//         if(value >= 5){
+//             console.log(value , "eligible for 10 % discount");
+//         }
+//         else{
+//             console.log(value, "eligible for 20% discount");
+//         }
+//     // /}
+// }
+// //let dis = 
+// arrayNum.map(discount);
+// // console.log(dis);
+// let numbers = [3, 4, 6, 7, 8, 9, 12, 10];
 
-let div3 = numbers.filter((value=> {
-    if(value%3 == 0) return true;
-}));
-console.log(div3);
-let redVal = [15, 3, 1, 8, 9, 43];
-console.log(redVal.reduce((previousValue, currentValue) =>  (previousValue + currentValue)));
+// let div3 = numbers.filter((value=> {
+//     if(value%3 == 0) return true;
+// }));
+// console.log(div3);
+// let redVal = [15, 3, 1, 8, 9, 43];
+// console.log(redVal.reduce((previousValue, currentValue) =>  (previousValue + currentValue)));
+
+let numbers = [1, 2, 3, 4, 5];
+let squareNumber(numbers){
+    console.log(numbers.map((value, index, array) => { 
+           return value *2}));
+}
+// let calculateAvg(numbers,squareNumber){
+//     return (Number.reduce((previousValue, currentValue) =>  (previousValue + currentValue)));
+// }
+
+// let result = calculateAvg();
+squareNumber();
