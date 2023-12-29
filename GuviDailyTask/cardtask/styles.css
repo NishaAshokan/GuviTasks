@@ -1,0 +1,41 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    width: 100%;
+    margin: 0 auto;
+    background: black;
+    color: azure;
+    text-align: center;
+    padding: 15px;
+}
+.countries{
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+}
+.country-div{
+    background: rgba(6, 3, 39, 0.9);
+    border: 1px solid burlywood;
+    padding: 15px;
+    text-align: center;
+    
+
+}
+img{
+    width: 100%;
+    height: 100px;
+
+}
+h4{
+    text-align: center;
+}
+@media screen and(max-width : 576px){
+    .countries{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
