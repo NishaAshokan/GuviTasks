@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainTable">
+
+       <div class="form">
+        <form action="">
+            <label for="fname">FIRST NAME</label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">LAST  NAME</label>
+            <input type="text" id="lname" name="lname">
+            <label for="address">ADDRESS</label>
+            <input type="text" id="address" name="address">
+            <label for="PC">PINCODE</label>
+            <input type="text" id="PC" name="PC">
+            <span>
+            <label for="gender">Gender</label>
+        
+            <input type="radio" name="gender" id="male"> Male 
+          <input type="radio" name="gender" id="male"> Female 
+        </span>
+        <br>
+            <label for="cof">CHOICE OF FOOD</label>
+            <input type="checkbox" id="food" value="yes"> Protein
+            <input type="checkbox" id="food" value="yes"> Meat
+            <input type="checkbox" id="food" value="yes"> Veg
+            <input type="checkbox" id="food" value="yes"> Cereals
+            <input type="checkbox" id="food" value="yes">Dairy
+            <br>
+            <label for="state">STATE</label>
+            <input type="text" id="state" name="state">
+            <label for="country">COUNTRY</label>
+            <input type="text" id="country" name="country">
+           <button onclick="addData()">ADD </button>
+        </form>
+
+        </div>
+        <h1>Data</h1>
+        <table class="table" border="1">
+            <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address</th>
+                <th>Pincode</th>
+                <th>Gender</th>
+                <th colspan="2">Choice of food</th>
+                <th>State </th>
+                <th>Country</th>
+            </tr>
+            
+        </table>
+        </div>
+                <script>
+                    var list1 = [];
+                    var list2 = [];
+                    var list3 = [];
+                    var list4 = [];
+                    var list5 = [];
+                    var list6 = [];
+                    var list7 = [];
+                    var list8 = [];
+                    var n = 1;
+                    var x =0 ;
+                    function addData(){
+var addData = document.getElementById('table');
+var NewRow = addData.insertRow(n);
+  list1[x]= document.getElementById("fname").value;
+  list2[x]= document.getElementById("lname").value;
+  list3[x]= document.getElementById("address").value;
+  list4[x]= document.getElementById("PC").value;
+  list5[x]= document.getElementById("male").value;
+  list6[x]= document.getElementById("food").value;
+  list7[x]= document.getElementById("state").value;
+  list8[x]= document.getElementById("country").value;
+  var cel1 = NewRow.insertCel1(0);
+  var cel2 = NewRow.insertCel1(1) ;
+  var cel3 = NewRow.insertCel1(2) ;
+  var cel4 = NewRow.insertCel1(3) ;
+  var cel5 = NewRow.insertCel1(4) ;
+  var cel6 = NewRow.insertCel1(5) ;
+  var cel7 = NewRow.insertCel1(6) ;
+  var cel8 = NewRow.insertCel1(7) ;
+  cel1.innerHTML = list1[x];
+  cel2.innerHTML = list2[x];
+  cel3.innerHTML = list3[x];
+  cel4.innerHTML = list4[x];
+  cel5.innerHTML = list5[x];
+  cel6.innerHTML = list6[x];
+  cel7.innerHTML = list7[x];
+  cel8.innerHTML = list8[x];
+ n++;
+ x++;
+  
+                    }
+
+                </script>
+                
+            
+    
+</body>
+</html>

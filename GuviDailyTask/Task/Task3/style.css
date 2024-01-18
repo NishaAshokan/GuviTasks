@@ -1,0 +1,33 @@
+*{
+    margin: auto;
+    padding: auto;
+}
+.form{
+    background-color: aquamarine;
+    padding: 20px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+.form input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid mediumslateblue;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    resize: vertical;
+}
+.form button{
+   background-color: cornflowerblue;
+   cursor: pointer; 
+}
+ table th{
+    border: 2px solid black;
+    height: 40px;
+ }
+ table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 15px;
+
+ }
