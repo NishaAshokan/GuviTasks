@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> API Example</title>
+</head>
+<body>
+
+<!-- HTML element to display the result -->
+<div id="result"></div>
+<style>
+    #result{
+        background: blueviolet;
+        text-align: center;
+        font-size: larger;
+        font-family: cursive;
+    }
+   
+</style>
+
+<script>
+// Make a GET request using fetch
+fetch("https://random.dog/woof.json")
+  .then(response => {
+    
+    if (response.ok) {
+      // Parse the response JSON
+      return response.json();
+    } else {
+      // If the response is not successful, throw an error
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  })
+  .then(data => {
+   
+    const resultElement = document.getElementById("result");
+
+    if (data.fileSizeBytes && data.url) {
+      resultElement.innerHTML = `
+        <p>File Size (Bytes): ${data.fileSizeBytes}</p>
+        <p>URL: ${data.url}</p>
+      `;
+    } else {
+      resultElement.innerHTML = "<p>No information found for the random dog.</p>";
+    }
+  })
+  .catch(error => {
+    // Handle errors
+    console.error("Fetch error:", error);
+  });
+</script>
+<div id="Dictionary"></div>
+<style>
+    #Dictionary{
+        box-shadow: 0cap;
+        background: magenta;
+        border-radius: 5px;
+        text-align: justify;
+    }
+</style>
+
+<script>
+// Encode the word to be included in the URL
+const encodedWord = encodeURIComponent("<hi>");
+
+
+fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodedWord}`)
+  .then(response => response.json())
+  .then(data => {
+    
+    const resultElement = document.getElementById("Dictionary");
+
+    if (data && data.title && data.message && data.resolution) {
+      resultElement.innerHTML = `
+        <p>Title: ${data.title}</p>
+        <p>Message: ${data.message}</p>
+        <p>Resolution: ${data.resolution}</p>
+      `;
+    } else {
+      resultElement.innerHTML = "<p>No information found for the given word.</p>";
+    }
+  })
+  .catch(error => {
+    // Handle errors
+    console.error("Fetch error:", error);
+  });
+</script>
+<div id="api"></div>
+<style>
+    
+        #api{
+            background: lightgreen;
+            text-align: center;
+            font-size: small;
+        }
+    
+</style>
+<script>
+
+fetch("https://dog.ceo/api/breeds/image/random")
+  .then(response => {
+    
+    if (response.ok) {
+      
+      return response.json();
+    } else {
+      
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+  })
+  .then(data => {
+    
+    document.getElementById("api").innerHTML = `
+      <p>Message: ${data.message}</p>
+      <p>Status: ${data.status}</p>
+    `;
+  })
+  .catch(error => {
+    
+    console.error("Fetch error:", error);
+  });
+</script>
+
+</body>
+</html>
