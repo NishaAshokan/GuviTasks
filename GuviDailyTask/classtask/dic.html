@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dictionary API Example</title>
+</head>
+<body>
+
+<!-- HTML element to display the result -->
+<div id="Dictionary"></div>
+<style>
+    div{
+        box-shadow: 0cap;
+        background: magenta;
+        border-radius: 5px;
+        text-align: justify;
+    }
+</style>
+
+<script>
+// Encode the word to be included in the URL
+const encodedWord = encodeURIComponent("<hi>");
+
+// Make a GET request using fetch
+fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodedWord}`)
+  .then(response => response.json())
+  .then(data => {
+    // Update the HTML element with the title, message, and resolution
+    const resultElement = document.getElementById("Dictionary");
+
+    if (data && data.title && data.message && data.resolution) {
+      resultElement.innerHTML = `
+        <p>Title: ${data.title}</p>
+        <p>Message: ${data.message}</p>
+        <p>Resolution: ${data.resolution}</p>
+      `;
+    } else {
+      resultElement.innerHTML = "<p>No information found for the given word.</p>";
+    }
+  })
+  .catch(error => {
+    // Handle errors
+    console.error("Fetch error:", error);
+  });
+</script>
+
+</body>
+</html>

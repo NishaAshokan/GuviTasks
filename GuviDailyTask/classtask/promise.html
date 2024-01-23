@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+       <h2>promise</h2> -->
+       <script>
+        // let promise = new Promise((resolve, reject)=> {
+        //     console.log("done");
+        // })
+        // new Promise((resolve, reject)=> {
+        //     console.log("1");
+        //     resolve();
+        //    // reject();
+        // })
+        // .then(()=> {
+        //     console.log("2");
+        // })
+        // .catch(()=> {
+        //     console.log("3");
+        // })
+        // .then(()=> {
+        //     console.log("4");
+        //     throw new error();
+        // })
+        // .then(()=> {
+        //     console.log("no");
+        // })
+        // .catch(()=> {
+        //     console.log("yes");
+        // })
+        // .catch(()=> {
+        //     console.log("5");
+        // })
+        // .then(()=> {
+        //     console.log("6");
+        // })
+        // .catch(()=> {
+        //     console.log("7");
+        // })
+        
+      // fetch(`https://restcountries.com/v3.1/all`)
+     
+
+       </script>
+    <!-- </div>
+</body>
+</html>  -->
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fetch Example</title> -->
+        </head>
+        <body>
+
+        HTML element to display the result
+        <div id="result"></div> -->
+
+        <script>
+        //Make a GET request using fetch
+        fetch("https://dog.ceo/api/breeds/image/random")
+        .then(response => {
+            // Check if the response is successful (status code 200-299)
+            if (response.ok) {
+            // Parse the response JSON
+            return response.json();
+            } else {
+            // If the response is not successful, throw an error
+            throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+        })
+        .then(data => {
+            // Update the HTML element with the message and status
+            document.getElementById("result").innerHTML = `
+            <p>Message: ${data.message}</p>
+            <p>Status: ${data.status}</p>
+            `;
+        })
+        .catch(error => {
+            // Handle errors
+            console.error("Fetch error:", error);
+        });
+
+        
+        </script>
+
+        </body>
+        </html>  
+     
+        
+        
