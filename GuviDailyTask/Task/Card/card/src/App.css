@@ -1,0 +1,66 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  align-items: center;
+  display: flex;
+  background-color: aquamarine;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.addtocart{
+  
+  border-radius: 10px;
+  margin:auto;
+  cursor: pointer;
+  color: blue;
+  background: #333;
+    
+}
+.increasequantity{
+  border-radius: 10px;
+  margin:auto;
+  cursor: pointer;
+  color: blue;
+  background: #333;
+}
+.decreasequantity{
+  border-radius: 10px;
+  margin:auto;
+  cursor: pointer;
+  color: blue;
+  background: #333;
+}
+
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.cart {
+  border: 1px solid #333;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: darkgoldenrod;
+}
+
+.cart-item {
+  margin-bottom: 10px;
+  background-color: burlywood;
+}
+.subtotal{
+  border-radius: 5px;
+  margin-top: 20px;
+  background-color: cadetblue;
+  color: chartreuse;
+}
+
+.total {
+  margin-top: 10px;
+}
+
