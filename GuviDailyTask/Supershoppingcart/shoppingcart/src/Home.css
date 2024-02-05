@@ -1,0 +1,7 @@
+.home{
+    background-color: blanchedalmond;
+}
+.home > div {
+ display: flex;
+ justify-content: center;
+}

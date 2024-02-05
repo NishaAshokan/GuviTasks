@@ -1,0 +1,14 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: end;
+    padding: 15px;
+}
+.header_end{
+    margin-right: 40px;
+}
