@@ -1,0 +1,27 @@
+.App {
+    justify-content: center;
+    text-align: center;
+    background-color: navajowhite;
+  }
+  
+  .management-panel {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .management-panel ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .management-panel ul li {
+    margin-bottom: 10px;
+  }
+  
+  .management-panel button {
+    margin-left: 10px;
+  }
