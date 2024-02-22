@@ -13,7 +13,7 @@ const dbUrl = process.env.DB_Url;
 
 mongoose
   .connect(dbUrl, {
-    //mongodb+srv://guvi:guvi@fsdwd2-t.lhqxodp.mongodb.net
+    ////mongodb://localhost:27017
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
