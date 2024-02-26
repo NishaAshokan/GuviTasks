@@ -10,8 +10,8 @@
     <ul>
       <% students.forEach(student => {%>
       <li>
-        <%= student.name %> - <%= student.age %> years old - Grade: <%=
-        student.grade %>
+        <%= student.name %> - <%= student.class_id %> classes - Feedback: <%=
+        student.feedback %>
         <form
           method="POST"
           action="/students/<%= student._id %>?_method=DELETE"
@@ -22,12 +22,13 @@
       </li>
       <% }); %>
     </ul>
-    <h2>Add New Student</h2>
+    <h2>Student Feedback</h2>
     <form method="POST" action="/students">
       <input type="text" name="name" placeholder="Name" required />
-      <input type="number" name="age" placeholder="Age" required />
-      <input type="text" name="grade" placeholder="Grade" required />
-      <button type="submit">Add Student</button>
+      <input type="number" name="class_id" placeholder="class_id" required />
+      
+      <textarea name="feedback" placeholder="Feedback" cols="30" rows="10" required ></textarea>
+      <button type="submit">Add FB of Student</button>
     </form>
   </body>
 </html>

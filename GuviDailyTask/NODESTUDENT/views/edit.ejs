@@ -9,8 +9,9 @@
     <h1>Edit Student</h1>
     <form method="POST" action="/students/<%= student._id %>?_method=PUT"">
       <input type="text" name="name" value="<%= student.name %>" required />
-      <input type="number" name="age" value="<%= student.age %>" required />
-      <input type="text" name="grade" value="<%= student.grade %>" required />
+      <input type="number" name="class_id" value="<%= student.class_id %>" required />
+      
+      <textarea name="feedback" value="<%= student.feedback %>" cols="30" rows="10"  required></textarea>
       <button type="submit">Update Student</button>
     </form>
   </body>
