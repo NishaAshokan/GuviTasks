@@ -5,13 +5,12 @@
 // // }
 // // let student1 = new property("magi", 23, "magi@gmail.com");
 // // let student2 = new property("nisha", 25, "asd@gmail.com");
-
-
+var a= 3
 // // console.log(student1);
 // // console.log(student2);
 // // function property (name, age, email){
 // //     this.name = name;
-// //     this.age = age;
+// //     this.age age;
 // //     this.email = email
 // //      this.greet = function(){
 // //         console.log(`hello! ${this.name}`);
