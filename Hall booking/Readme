@@ -1,0 +1,18 @@
+1.Adding a new Room
+    - /room/add
+    - If the Room ID already exist it will throw an Error
+
+2.Adding new Booking
+    - /customer/add
+    - If the Room ID already Booked for that date and time it will throw an Error
+    1.Get All the rooms details
+    - /room/all
+
+2.Get room details with customer who booked the room
+    - /room/allroom
+
+3.Get Customer details
+    - /customer/all
+
+4.Get Customer details with number of times they booked a room and room details
+    - /customer/cus/count
