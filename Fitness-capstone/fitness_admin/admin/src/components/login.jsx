@@ -1,0 +1,45 @@
+import React from 'react'
+import './Login.css'
+
+const Login = () => {
+
+    const [username, setUsername] = React.useState('')
+    const [password, setPassword] = React.useState('')
+
+    const handleLogin = () => {
+        if(username === 'admin1' && password === 'admin123'){
+            alert('Login successful')
+            localStorage.setItem('admin', JSON.stringify({username, password}))
+            window.location.href = '/'
+        }
+        else if(username === 'admin2' && password === 'admin123'){
+            alert('Login successful')
+            localStorage.setItem('admin', JSON.stringify({username, password}))
+            window.location.href = '/'
+        }
+        else{
+            alert('Login failed')
+        }
+    }
+  return (
+    <div className='logincont'>
+        <div className='loginformcont'>
+            <h1>Pro Cart - Admin Login</h1>
+            <form>
+                <input type='text' placeholder='Username' 
+                    onChange={(e)=>setUsername(e.target.value)}
+                />
+                <input type='password' placeholder='Password' 
+                    onChange={(e)=>setPassword(e.target.value)}
+                />
+                <button
+                    type='button'
+                    onClick={()=>handleLogin()}
+                >Login</button>
+            </form>
+        </div>
+    </div>
+  )
+}
+
+export default Login 
