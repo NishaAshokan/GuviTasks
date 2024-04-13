@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper.min.css';
-import 'swiper/components/pagination/pagination.min.css';
-import SwiperCore, { Pagination } from 'swiper/core';
+import 'swiper/css';
+//import 'swiper/components/pagination/pagination.min.css';
+ //import SwiperCore, { Pagination } from 'swiper/core';
+//import 'swiper/css/pagination';
 import './HomeBanner2.css';
 
-SwiperCore.use([Pagination]);
+//SwiperCore.use([Pagination]);
 
 const HomeBanner2 = () => {
   const [workouts, setWorkouts] = useState(null);

@@ -1,28 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import '../popup.css'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import DatePicker from "react-horizontal-datepicker";
 import { AiFillDelete, AiOutlineClose } from 'react-icons/ai'
 import { TimeClock } from '@mui/x-date-pickers/TimeClock';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
+//import dayjs, { Dayjs } from 'dayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-interface CaloriIntakePopupProps {
-  setShowCalorieIntakePopup: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface CaloriIntakePopupProps {
+//   setShowCalorieIntakePopup: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
-const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIntakePopup }) => {
-  const color = '#ffc20e'
+const CalorieIntakePopup = ({ setShowCalorieIntakePopup }) => {
+  const color = '#ffc20e';
 
-  const [date, setDate] = React.useState<any>(new Date())
+  const [date, setDate] = useState(new Date());
 
-  const selectedDay = (val: any) => {
+  const selectedDay = (val) => {
     console.log(val)
   };
 
 
-  const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
+  const [value, setValue] = useState(dayjs('2022-04-17T15:30'));
   return (
     <div className='popupout'>
 
@@ -79,5 +81,8 @@ const CalorieIntakePopup: React.FC<CaloriIntakePopupProps> = ({ setShowCalorieIn
     </div>
   )
 }
+CaloriIntakePopup.propTypes = {
+  setShowCalorieIntakePopup: PropTypes.func.isRequired
+};
 
 export default CalorieIntakePopup

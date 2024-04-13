@@ -1,76 +1,112 @@
-import { Link } from 'react-router-dom'
-import React from 'react'
-import './Navbar.css'
-const Navbar = () => {
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import './Navbar.css';
+import logo from './Logo.png';
 
-    const setlogin = () => {
-        if (localStorage.getItem('admin')) {
-            return (
-                <div className='loginlogoutcont'>
-                    <Link to='/login' style={{ textDecoration: 'none' }} onClick={() => localStorage.removeItem('admin')}>
-                        <button className='loginlogoutbtn'>Logout</button>
-                    </Link>
-                </div>
-            )
-        }
-        else {
-            return (
-                <div className='loginlogoutcont'>
-                    <Link to='/login' style={{ textDecoration: 'none' }}>
-                        <button className='loginlogoutbtn'>Login</button>
-                    </Link>
-                </div>
-            )
-        }
+function Navbar() {
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+  const backendApiUrl = 'http://localhost:7800';
+
+  const checkAdminAuthenticated = async () => {
+    try {
+      const response = await fetch(`${backendApiUrl}/admin/checklogin`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      });
+
+      if (response.ok) {
+        setIsAdminAuthenticated(true);
+      } else {
+        setIsAdminAuthenticated(false);
+      }
+    } catch (error) {
+      console.error(error);
     }
+  };
 
+  useEffect(() => {
+    checkAdminAuthenticated();
+  }, []);
 
-    const [islogin , setislogin] = React.useState(false)
-
-    const checklogin = () => {
-        if(localStorage.getItem('admin')){
-            setislogin(true)
-        }
-        else{
-            setislogin(false)
-            window.location.href = '/login'
-        }
-    }
-
-    React.useEffect(()=>{
-        checklogin()
-    },[])
- 
-
-    return (
-        <div className="navbar">
-            <div className="nav-left">
-                <h1>Pro Cart</h1>
-            </div>
-            <div className="nav-right">
-                <Link to='/orders' style={{ textDecoration: 'none' }}>
-                    <p>Orders</p>
-                </Link>
-                <Link to='/addproduct' style={{ textDecoration: 'none' }}>
-                    <p>Add Product</p>
-                </Link>
-                <Link to='/manageproducts' style={{ textDecoration: 'none' }}>
-                    <p>Manage Products</p>
-                </Link>
-
-                <Link to='/manageslider' style={{ textDecoration: 'none' }}>
-                    <p>Manage Slider</p>
-                </Link>
-                <Link to='/manageofferimages' style={{ textDecoration: 'none' }}>
-                    <p>Manage Offers</p>
-                </Link>
-
-                <div className='loginlogoutcont'>
-                    {setlogin()}
-                </div>
-            </div>
-        </div>
-    )
+  return (
+    <div className='navbar'>
+      <img src={logo} alt='logo' width={100} />
+      <div className='adminlinks'>
+        {isAdminAuthenticated ? (
+          <>
+            <Link to='/pages/addworkout'>Add Workout</Link>
+          </>
+        ) : (
+          <>
+            <Link to='/adminauth/login'>Login</Link>
+            <Link to='/adminauth/register'>Register</Link>
+          </>
+        )}
+      </div>
+    </div>
+  );
 }
 
-export default Navbar
+export default Navbar;
+// import React , { useState , useEffect }from 'react';
+// import { Link } from 'react-router-dom';
+// import './Navbar.css';
+// import logo from './Logo.png';
+// import { response } from 'express';
+
+
+
+// function Navbar() {
+//     const [isAdminAutheniticated ,setIsAdminAutheniticated ] = useState(false);
+//     const backendApiUrl = 'http://localhost:7800';
+//     const checkAdminAuthenticated = async() => {
+//       try{
+//         const response = await fetch(`${backendApiUrl}/admin/checklogin`, {
+//           method: 'GET',
+//           headers: {
+//             'Content-Type': 'application/json'
+
+//           },
+//           credentials: 'include'
+//         });
+        
+//         if(response.ok){
+          
+//           setIsAdminAutheniticated(true);
+//         }
+//         else{
+//           setIsAdminAutheniticated(false);
+//         }
+//         }
+//         catch(error){
+//           console.error(error);
+//         }
+//       }
+//       useEffect (() => {
+//         checkAdminAuthenticated();
+//         }, []);
+//   return (
+//     <div className='navbar'>
+//         <img src={logo} alt='logo' width={100} />
+//         <div className='adminlinks'>
+//             {isAdminAutheniticated ? 
+//             (
+//                 <>
+//                 <Link href='/pages/addworkout' >Add Workout</Link>
+//                 </>
+//             ): (
+//                <>
+//                <Link href='/adminauth/login'> login</Link> 
+//                <Link href='/adminauth/register'> Register</Link>
+//                </> 
+//             )}
+
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Navbar
