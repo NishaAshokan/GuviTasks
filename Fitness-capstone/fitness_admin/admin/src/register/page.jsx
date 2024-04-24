@@ -5,7 +5,7 @@ const signuppage = () => {
     const [name , setName] = useState('');
     const [email , setEmail] = useState('');
     const [password , setPassword] = useState('');
-    const backendApiUrl = 'http://localhost:7800';
+    const backendApiUrl = 'http://localhost:8000';
 
     const handleSignup = async () => {
         try{
