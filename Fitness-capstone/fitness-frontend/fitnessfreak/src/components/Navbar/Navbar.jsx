@@ -9,7 +9,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [isloggedin, setIsloggedin] = useState(false);
     const [showpopup, setShowpopup] = useState(false);
-    const backendApiUrl = 'http://localhost:7800';
+    const backendApiUrl = 'http://localhost:8000';
 
     const checklogin = async () => {
         try {
