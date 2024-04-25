@@ -9,8 +9,8 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./Routes/Auth');
 const calorieIntakeRoutes = require('./Routes/CalorieIntake');
 const adminRoutes = require('./Routes/Admin');
-//Image to image
-const imageUploadRoutes = require('./Routes/imageUploadRoutes');
+//Image to image 
+const imageUploadRoutes = require('./Routes/ImageUploadRoutes');
 const sleepTrackRoutes = require('./Routes/SleepTrack');
 const stepTrackRoutes = require('./Routes/StepTrack');
 const weightTrackRoutes = require('./Routes/WeightTrack');
@@ -52,7 +52,7 @@ app.use('/watertrack', waterTrackRoutes);
 app.use('/workouttrack', workoutTrackRoutes);
 app.use('/workoutplans', workoutRoutes);
 app.use('/report', reportRoutes);
-
+//
 app.get('/', (req, res) => {
     res.json({ message: 'The API is working' });
 });
