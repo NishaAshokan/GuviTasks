@@ -24,8 +24,8 @@ require('dotenv').config();
 require('./db')
 
 app.use(bodyParser.json());
-const allowedOrigins = ['http://localhost:3000']; // Add more origins as needed
-
+//const allowedOrigins = ['http://localhost:3000 https://fitnessproject-api.vercel.app/']; // Add more origins as needed
+const allowedOrigins = ['https://fitnessproject-api.vercel.app'];
 app.use(
     cors({
         origin: function (origin, callback) {
