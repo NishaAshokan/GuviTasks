@@ -26,9 +26,9 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 // Allowed origins
-const allowedOrigins = ['http://localhost:3000', 'https://fitnessproject-api.vercel.app'];
+const allowedOrigins = ['http://localhost:3000'];
 
-// CORS configuration
+// CORS configuration , 'https://fitnessproject-api.vercel.app'
 const corsOptions = {
     origin: function (origin, callback) {
         if (origin === undefined || allowedOrigins.includes(origin)) {
