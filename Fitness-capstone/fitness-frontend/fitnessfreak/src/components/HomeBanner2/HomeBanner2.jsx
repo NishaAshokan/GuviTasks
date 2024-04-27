@@ -59,7 +59,7 @@ const HomeBanner2 = () => {
       {
         type: 'Forearms',
         imageUrl: 'https://images.unsplash.com/photo-1591940742878-13aba4b7a34e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9yZWFybXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
-        durationInMin: 110
+        durationInMin: 120
       }
     ];
     setWorkouts(data);

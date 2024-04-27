@@ -5,7 +5,7 @@ import logo from './Logo.png';
 
 function Navbar() {
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
-  const backendApiUrl = 'http://localhost:7800';
+  const backendApiUrl = ' https://guvitasks-12.onrender.com';
 
   const checkAdminAuthenticated = async () => {
     try {

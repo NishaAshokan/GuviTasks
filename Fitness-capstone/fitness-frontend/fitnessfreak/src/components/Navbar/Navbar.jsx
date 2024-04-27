@@ -9,7 +9,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [isloggedin, setIsloggedin] = useState(false);
     const [showpopup, setShowpopup] = useState(false);
-    const backendApiUrl = 'http://localhost:8000';
+    const backendApiUrl = ' https://guvitasks-12.onrender.com';
 
     const checklogin = async () => {
         try {

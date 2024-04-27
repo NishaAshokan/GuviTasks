@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types';
 import './AuthPopup.css'
-//import Image from 'next/image'
+
 import logo from '../../assets/logo.png'
 import Input from '@mui/joy/Input';
 import Select from '@mui/joy/Select';
@@ -47,7 +47,7 @@ const AuthPopup = ({ setShowpopup }) => {
  
 
 
-    const backendApiUrl = 'http://localhost:7800';
+    const backendApiUrl = ' https://guvitasks-12.onrender.com';
 
     const handleLogin = () => {
         console.log(loginformData);
