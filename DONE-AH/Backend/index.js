@@ -25,7 +25,7 @@ require('./db')
 app.use(bodyParser.json());
 //const allowedOrigins = ['http://localhost:3000', 'https://fitnessproject-api.vercel.app/'];
 
-const allowedOrigins = ['https://added-madhis-projects.vercel.app']; // Add more origins as needed
+const allowedOrigins = ['https://added-madhis-projects.vercel.app' , 'http://localhost:3000']; // Add more origins as needed
 
 app.use(
     cors({
