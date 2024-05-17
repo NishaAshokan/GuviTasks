@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import logo from './logo.png';
 import './Navbar.css';
-import logo from './Logo.png';
 
-function Navbar() {
+const Navbar = () => {
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
-  const backendApiUrl = ' https://guvitasks-12.onrender.com';
 
   const checkAdminAuthenticated = async () => {
     try {
-      const response = await fetch(`${backendApiUrl}/admin/checklogin`, {
+      const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/admin/checklogin', {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        credentials: 'include'
+        credentials: 'include',
       });
-
       if (response.ok) {
         setIsAdminAuthenticated(true);
       } else {
         setIsAdminAuthenticated(false);
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
+      setIsAdminAuthenticated(false);
     }
   };
 
@@ -33,22 +33,22 @@ function Navbar() {
 
   return (
     <div className='navbar'>
-      <img src={logo} alt='logo' width={100} />
+      <Image src={logo} alt='logo' width={100} className='logo' />
       <div className='adminlinks'>
-        {isAdminAuthenticated ? (
+        { isAdminAuthenticated ? (
           <>
-            <Link to='/pages/addworkout'>Add Workout</Link>
+            <Link href='/pages/addworkout'> AddWorkout </Link>
           </>
         ) : (
           <>
-            <Link to='/adminauth/login'>Login</Link>
-            <Link to='/adminauth/register'>Register</Link>
+            <Link href='/adminauth/login'> Login </Link>
+            <Link href='/adminauth/register'> Signup </Link>
           </>
         )}
       </div>
     </div>
   );
-}
+};
 
 export default Navbar;
 // import React , { useState , useEffect }from 'react';

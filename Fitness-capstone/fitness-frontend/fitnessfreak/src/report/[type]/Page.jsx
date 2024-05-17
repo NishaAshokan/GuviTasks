@@ -80,6 +80,9 @@ const Page = () => {
 
     return (
         <div className='reportpage'>
+
+
+
            <div className='s1'>
                 {
                     dataS1 &&
@@ -191,4 +194,86 @@ const Page = () => {
     );
 };
 
+
+
+
 export default Page;
+//  && data.data.length > 0 let temp = [
+        //     {
+        //         date: 'Thu Sep 28 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2000,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Wed Sep 27 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2500,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Tue Sep 26 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2700,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Mon Sep 25 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 3000,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Sun Sep 24 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2000,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Sat Sep 23 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2300,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Fri Sep 22 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2500,
+        //         unit: 'kcal'
+        //     },
+        //     {
+        //         date: 'Thu Sep 21 2023 20:30:30 GMT+0530 (India Standard Time)',
+        //         value: 2700,
+        //         unit: 'kcal'
+        //     },
+        // ]
+
+        // let dataForLineChart = temp.map((item: any) => {
+        //     let val = JSON.stringify(item.value)
+        //     return val
+        // })
+
+        // let dataForXAxis = temp.map((item: any) => {
+        //     let val = new Date(item.date)
+        //     return val
+        // })
+
+        // console.log({
+        //     data: dataForLineChart,
+        //     title: '1 Day Calorie Intake',
+        //     color: color,
+        //     xAxis: {
+        //         data: dataForXAxis,
+        //         label: 'Last 10 Days',
+        //         scaleType: 'time'
+        //     }
+        // })
+
+        // {
+        //     dataS1.length > 0 && 
+        //     <>
+        // // setDataS1({
+        // }
+        // <></>
+        //     data: dataForLineChart,
+        //     title: '1 Day Calorie Intake',
+        //     color: color,
+        //     xAxis: {
+        //         data: dataForXAxis,
+        //         label: 'Last 10 Days',
+        //         scaleType: 'time'
+        //     } 
+        // })

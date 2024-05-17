@@ -1,67 +1,66 @@
-import React, {useState} from 'react';
-import '../auth.css';
+import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-const signuppage = () => {
-    const [name , setName] = useState('');
-    const [email , setEmail] = useState('');
-    const [password , setPassword] = useState('');
-    const backendApiUrl = 'http://localhost:8000';
+import 'react-toastify/dist/ReactToastify.css';
 
-    const handleSignup = async () => {
-        try{
-        const response = await fetch(`${backendApiUrl}/admin/register`,{
-            method : 'post',
-            headers : {
-                'content-type' : 'application/json',
-            },
-            body: JSON.stringify({name, email, password}),
-            credentials : 'include'
-        })
-        const data = await response.json();
-        if(data.ok){
-            const data = await response.json();
-            console.log('Admin Registration Succesful', data);
-            toast.success('Admin Registration Succesful', {
-                position : toast.POSITION.TOP_CENTER,
-            });
-        }
-        else{
-            console.error('Admin Registration failed', data);
-            toast.error('Admin Registration failed', {
-                position : toast.POSITION.TOP_CENTER,
-            });
-        }
-        }
-        catch{
-            console.error('error while  Registration ');
-            toast.error('error  while Registration',eeror);
-        }
+const SignupPage = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSignup = async () => {
+    try {
+      const response = await fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/admin/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, password }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        console.log('Admin Registered Successfully', data);
+        toast.success('Admin registered successfully', {
+          position: 'top-center',
+        });
+      } else {
+        console.error('Admin registration failed:', response.statusText);
+        toast.error('Registration failed', {
+          position: 'top-center',
+        });
+      }
+    } catch (error) {
+      console.error('Error on registration:', error);
+      toast.error('Error on registration', {
+        position: 'top-center',
+      });
     }
+  };
 
-    return(
-        <div className='formpage'>
-        <input 
-        type="text"
+  return (
+    <div className='formpage'>
+      <input
+        type='text'
         placeholder='Name'
         value={name}
-        onChange={(e) => setName(e.target.value)} 
-        />
-          <input 
-        type="email"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <input
+        type='text'
         placeholder='Email'
         value={email}
-        onChange={(e) => setEmail(e.target.value)} 
-        />
-          <input 
-        type="password"
+        onChange={(e) => setEmail(e.target.value)}
+      />
+      <input
+        type='password'
         placeholder='Password'
         value={password}
-        onChange={(e) => setPassword(e.target.value)} 
-        />
-        <button onClick={handleSignup}>Signup</button>
-        </div>
-    )
-}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleSignup}>Sign up</button>
+      <ToastContainer />
+    </div>
+  );
+};
 
-
-export default signuppage;
+export default SignupPage;
