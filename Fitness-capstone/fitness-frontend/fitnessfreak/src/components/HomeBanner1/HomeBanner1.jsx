@@ -54,6 +54,10 @@ const HomeBanner1 = () => {
     setData(temp);
     console.log(temp);
   };
+
+  React.useEffect(() => {
+    getData()
+  }, [])
 // fetch(process.env.NEXT_PUBLIC_BACKEND_API + '/report/getreport', {
 //   method : 'GET',
 //   credentials : 'include',
@@ -73,9 +77,10 @@ const HomeBanner1 = () => {
 //   setData([])
 // }) 
 //   }
-  useEffect(() => {
-    getData();
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+  
 
   function simplifyFraction(numerator, denominator) {
     function gcd(a, b) {
@@ -133,6 +138,8 @@ const HomeBanner1 = () => {
     </div>
   );
 };
+
+export default HomeBanner1;
 //   return (
 //     <div className='meters'>
 
@@ -189,4 +196,4 @@ const HomeBanner1 = () => {
 //     </div>
 //   )
 // }
-export default HomeBanner1;
+
