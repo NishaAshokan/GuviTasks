@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -12,25 +13,14 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
     .then(() => console.log('Database connected successfully'))
     .catch(err => console.error('Database connection error:', err));
 
-// Import routes
-const authRoutes = require('./Routes/Auth');
-const calorieIntakeRoutes = require('./Routes/CalorieIntake');
-const adminRoutes = require('./Routes/Admin');
-const imageUploadRoutes = require('./Routes/imageUploadRoutes');
-const sleepTrackRoutes = require('./Routes/SleepTrack');
-const stepTrackRoutes = require('./Routes/StepTrack');
-const weightTrackRoutes = require('./Routes/WeightTrack');
-const waterTrackRoutes = require('./Routes/WaterTrack');
-const workoutTrackRoutes = require('./Routes/WorkoutTrack');
-const workoutRoutes = require('./Routes/WorkoutPlans');
-const reportRoutes = require('./Routes/Report');
-
 const app = express();
 const PORT = 8000;
 
+// Middleware
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+// CORS configuration
 const allowedOrigins = [
     'https://add-admin.vercel.app',
     'https://added.vercel.app',
@@ -58,7 +48,19 @@ app.use((req, res, next) => {
     next();
 });
 
-// Route setup
+// Routes
+const authRoutes = require('./Routes/Auth');
+const calorieIntakeRoutes = require('./Routes/CalorieIntake');
+const adminRoutes = require('./Routes/Admin');
+const imageUploadRoutes = require('./Routes/imageUploadRoutes');
+const sleepTrackRoutes = require('./Routes/SleepTrack');
+const stepTrackRoutes = require('./Routes/StepTrack');
+const weightTrackRoutes = require('./Routes/WeightTrack');
+const waterTrackRoutes = require('./Routes/WaterTrack');
+const workoutTrackRoutes = require('./Routes/WorkoutTrack');
+const workoutRoutes = require('./Routes/WorkoutPlans');
+const reportRoutes = require('./Routes/Report');
+
 app.use('/auth', authRoutes);
 app.use('/calorieintake', calorieIntakeRoutes);
 app.use('/admin', adminRoutes);
@@ -71,26 +73,25 @@ app.use('/workouttrack', workoutTrackRoutes);
 app.use('/workoutplans', workoutRoutes);
 app.use('/report', reportRoutes);
 
+// Default route
 app.get('/', (req, res) => {
     res.json({ message: 'The API is working' });
 });
 
-// Handling 404 errors
+// Error handling
 app.use((req, res, next) => {
     res.status(404).json({ message: 'Resource not found' });
 });
 
-// Handling other errors
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).json({ message: 'Internal server error' });
 });
 
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-
 
 
 // const express = require('express');
