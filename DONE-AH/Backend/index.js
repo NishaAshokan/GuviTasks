@@ -32,9 +32,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 const allowedOrigins = [
-    'https://add-admin-mp.vercel.app',
-    'https://add-admin-695y.vercel.app/',
-    'https://add-admin-695y.vercel.app',
+    'https://add-admin.vercel.app',
+    'https://added.vercel.app',
     'https://added-mp-madhis-projects.vercel.app',
     'http://localhost:3001',
     'http://localhost:3000',
