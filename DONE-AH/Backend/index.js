@@ -26,7 +26,8 @@ app.use(bodyParser.json());
 const allowedOrigins = [
     'https://add-admin.vercel.app',
     'https://added.vercel.app',
-    'https://added-mp-madhis-projects.vercel.app',
+   'https://added-7qn1.vercel.app',
+   'https://add-admine.vercel.app',
     'http://localhost:3001',
     'http://localhost:3000',
     'http://localhost:3002',
