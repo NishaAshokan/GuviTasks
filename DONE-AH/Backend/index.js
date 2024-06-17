@@ -24,8 +24,8 @@ require('./db'); // Assuming this file sets up the MongoDB connection
 app.use(bodyParser.json());
 
 const allowedOrigins = [
-    'https://add-admin.vercel.app',
-    'https://added.vercel.app',
+    'https://added-uhvu.vercel.app',
+    'https://add-admin-4xxl.vercel.app',
    'https://added-7qn1.vercel.app',
    'https://add-admine.vercel.app',
     'http://localhost:3001',
